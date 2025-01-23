@@ -17,7 +17,7 @@ function renderNav(isMenuOpen) {
     <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-30">
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center h-16">
-          <a href="#home" class="text-xl font-bold text-gray-800">John Doe</a>
+          <a href="#home" class="text-xl font-bold text-gray-800">Owen Reedy</a>
           
           <!-- Desktop Navigation -->
           <div class="hidden lg:flex space-x-6">
@@ -50,9 +50,11 @@ function renderHome() {
       <section class="mb-12">
         <h2 class="section-title">About Me</h2>
         <p class="text-gray-700">
-          Passionate software engineering student with a strong foundation in full-stack development
-          and a keen interest in cloud computing and artificial intelligence. Currently pursuing
-          a Bachelor's degree in Computer Science with a focus on software engineering.
+          I am motivated Software Engineering Student who is seeking to gain
+          experience within the field. Excited by the prospect of being
+          involved with projects that can improve the lives of many. I aim to
+          do so by using the experiences I have gained through leadership
+          roles to effectively work with customers others.
         </p>
       </section>
 
@@ -60,13 +62,13 @@ function renderHome() {
       <section class="mb-12">
         <h2 class="section-title">Education</h2>
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-gray-800">Bachelor of Science in Computer Science</h3>
-          <p class="text-gray-600">University of Technology</p>
-          <p class="text-gray-600">Expected Graduation: May 2024</p>
-          <p class="text-gray-700 mt-2">GPA: 3.8/4.0</p>
+          <h3 class="text-xl font-semibold text-gray-800">Bachelor of Science in Software Engineering</h3>
+          <p class="text-gray-600">Auburn University</p>
+          <p class="text-gray-600">Expected Graduation: May 2025</p>
+          <p class="text-gray-700 mt-2">GPA: 3.26/4.0</p>
           <p class="text-gray-700">Relevant Coursework:</p>
           <ul class="list-disc list-inside text-gray-700 ml-4">
-            <li>Data Structures and Algorithms</li>
+            <li>Introduction to Algorithms</li>
             <li>Software Engineering Principles</li>
             <li>Database Management Systems</li>
             <li>Web Development</li>
@@ -84,7 +86,7 @@ function renderHome() {
             <span class="skill-tag">JavaScript</span>
             <span class="skill-tag">Java</span>
             <span class="skill-tag">C++</span>
-            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">C#</span>
           </div>
         </div>
         <div class="mb-6">
@@ -92,10 +94,9 @@ function renderHome() {
           <div class="flex flex-wrap">
             <span class="skill-tag">React</span>
             <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Express</span>
-            <span class="skill-tag">MongoDB</span>
             <span class="skill-tag">Git</span>
-            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">.NET</span>
           </div>
         </div>
       </section>
@@ -104,12 +105,22 @@ function renderHome() {
       <section class="mb-12">
         <h2 class="section-title">Experience</h2>
         <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-          <h3 class="text-xl font-semibold text-gray-800">Software Development Intern</h3>
-          <p class="text-gray-600">Tech Solutions Inc. - Summer 2023</p>
+          <h3 class="text-xl font-semibold text-gray-800">Digital Intern</h3>
+          <p class="text-gray-600">Michelin - Summer 2024</p>
           <ul class="list-disc list-inside text-gray-700 mt-2">
-            <li>Developed and maintained features for a customer-facing web application</li>
-            <li>Collaborated with senior developers on code reviews and testing</li>
-            <li>Implemented responsive design improvements that increased mobile usage by 25%</li>
+            <li>Developed and implemented a Python script to automate data processing for manufacturing operations, significantly enhancing efficiency and accuracy in reporting</li>
+            <li>Leveraged Python's data manipulation libraries (Pandas) to streamline the extraction, transformation, and loading (ETL) processes from an Oracle Database into a usable format</li>
+            <li>Integrated the processed data into a MicroStrategy report, reducing manual effort and error susceptibility, optimizing manufacturing workflows and providing insights critical for decision-making, enhancing overall operational functionality</li>
+            <li>Assisted colleagues with digital tasks, including troubleshooting and resolving issues in Power BI reports</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md mb-4">
+          <h3 class="text-xl font-semibold text-gray-800">Project Intern</h3>
+          <p class="text-gray-600">Axis Group - Summer 2023</p>
+          <ul class="list-disc list-inside text-gray-700 mt-2">
+            <li>Implemented a search function for users to identify unused report fields using C# .NET to enhance existing 	software</li>
+            <li>Collaborated with manager and mentor to gather requirements and develop implementation plan</li>
+            <li>Utilized GitLab for version control, collaboration, and continuous integration</li>
           </ul>
         </div>
       </section>
@@ -118,26 +129,13 @@ function renderHome() {
       <section class="mb-12">
         <h2 class="section-title">Projects</h2>
         <div class="project-card">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">E-Commerce Platform</h3>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Resume Website</h3>
           <p class="text-gray-700 mb-2">
-            Built a full-stack e-commerce platform using MERN stack (MongoDB, Express, React, Node.js).
-            Implemented user authentication, product catalog, and shopping cart functionality.
-          </p>
-          <div class="flex flex-wrap">
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">MongoDB</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Weather Dashboard</h3>
-          <p class="text-gray-700 mb-2">
-            Developed a weather dashboard application that displays current weather and forecasts
-            using OpenWeatherMap API. Features include location search and responsive design.
+            Built a resume website using Vite
           </p>
           <div class="flex flex-wrap">
             <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">API Integration</span>
+            <span class="skill-tag">HTML</span>
             <span class="skill-tag">CSS</span>
           </div>
         </div>
@@ -157,20 +155,20 @@ function renderContact() {
             <div class="space-y-4">
               <p class="flex items-center text-gray-700">
                 <i class="fas fa-envelope w-6"></i>
-                <a href="mailto:john.doe@example.com" class="ml-2 hover:text-blue-600">
-                  john.doe@example.com
+                <a href="mailto:owen.reedy@outlook.com" class="ml-2 hover:text-blue-600">
+                  owen.reedy@outlook.com
                 </a>
               </p>
               <p class="flex items-center text-gray-700">
                 <i class="fab fa-github w-6"></i>
-                <a href="https://github.com/johndoe" target="_blank" class="ml-2 hover:text-blue-600">
-                  github.com/johndoe
+                <a href="https://github.com/owenreedy" target="_blank" class="ml-2 hover:text-blue-600">
+                  github.com/owenreedy
                 </a>
               </p>
               <p class="flex items-center text-gray-700">
                 <i class="fab fa-linkedin w-6"></i>
-                <a href="https://linkedin.com/in/johndoe" target="_blank" class="ml-2 hover:text-blue-600">
-                  linkedin.com/in/johndoe
+                <a href="https://www.linkedin.com/in/owen-reedy-8331081ab/" target="_blank" class="ml-2 hover:text-blue-600">
+                  linkedin.com/in/owen-reedy
                 </a>
               </p>
             </div>
@@ -216,7 +214,7 @@ function renderApp() {
     ${renderNav(isMenuOpen)}
     <main>${router()}</main>
     <footer class="text-center text-gray-600 mt-16 pb-8">
-      <p>© 2024 John Doe. All rights reserved.</p>
+      <p>© 2024 Owen Reedy. All rights reserved.</p>
     </footer>
   `;
 }
