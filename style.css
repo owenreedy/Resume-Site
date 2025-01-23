@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.section-title {
+  @apply text-2xl font-bold mb-4 text-gray-800 border-b-2 border-blue-500 pb-2;
+}
+
+.skill-tag {
+  @apply bg-gray-200 px-3 py-1 rounded-full text-sm text-gray-700 mr-2 mb-2;
+}
+
+.project-card {
+  @apply bg-white p-6 rounded-lg shadow-md mb-4 hover:shadow-lg transition-shadow;
+}
