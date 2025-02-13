@@ -1,4 +1,5 @@
 import './style.css'
+import emailjs from '@emailjs/browser';
 
 // Router function to handle page navigation
 function router() {
@@ -175,20 +176,44 @@ function renderContact() {
           </div>
           <div>
             <h3 class="text-xl font-semibold text-gray-800 mb-4">Send a Message</h3>
-            <form class="space-y-4">
+            <form id="contactForm" class="space-y-4" onsubmit="handleSubmit(event)">
               <div>
                 <label class="block text-gray-700 mb-2" for="name">Name</label>
-                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name"
+                  required
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                >
               </div>
               <div>
                 <label class="block text-gray-700 mb-2" for="email">Email</label>
-                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  required
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                >
               </div>
               <div>
                 <label class="block text-gray-700 mb-2" for="message">Message</label>
-                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"></textarea>
+                <textarea 
+                  id="message" 
+                  name="message"
+                  required
+                  rows="4" 
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                ></textarea>
               </div>
-              <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+              <div id="formStatus" class="hidden">
+                <p class="text-green-600 font-medium"></p>
+              </div>
+              <button 
+                type="submit" 
+                class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+              >
                 Send Message
               </button>
             </form>
@@ -206,6 +231,49 @@ let isMenuOpen = false;
 window.toggleMenu = function() {
   isMenuOpen = !isMenuOpen;
   document.querySelector('#app').innerHTML = renderApp();
+};
+
+// Handle form submission
+window.handleSubmit = async function(event) {
+  event.preventDefault();
+  
+  const form = event.target;
+  const statusDiv = document.getElementById('formStatus');
+  const statusText = statusDiv.querySelector('p');
+  const submitButton = form.querySelector('button[type="submit"]');
+  
+  // Disable the submit button and show loading state
+  submitButton.disabled = true;
+  submitButton.innerHTML = 'Sending...';
+  
+  try {
+    const templateParams = {
+      from_name: form.name.value,
+      from_email: form.email.value,
+      message: form.message.value,
+    };
+
+    await emailjs.send(
+      'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+      'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+      templateParams
+    );
+
+    // Show success message
+    statusDiv.classList.remove('hidden');
+    statusText.textContent = 'Message sent successfully!';
+    statusText.className = 'text-green-600 font-medium';
+    form.reset();
+  } catch (error) {
+    // Show error message
+    statusDiv.classList.remove('hidden');
+    statusText.textContent = 'Failed to send message. Please try again.';
+    statusText.className = 'text-red-600 font-medium';
+  } finally {
+    // Re-enable the submit button
+    submitButton.disabled = false;
+    submitButton.innerHTML = 'Send Message';
+  }
 };
 
 // Render the entire application
