@@ -1,6 +1,8 @@
 import './style.css'
 import emailjs from '@emailjs/browser';
 
+emailjs.init("Y5ljGSnD80yBWkQbL");
+
 // Router function to handle page navigation
 function router() {
   const path = window.location.hash.slice(1) || 'home';
@@ -249,13 +251,13 @@ window.handleSubmit = async function(event) {
   try {
     const templateParams = {
       from_name: form.name.value,
-      from_email: form.email.value,
+      reply_to: form.email.value,
       message: form.message.value,
     };
 
     await emailjs.send(
-      'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-      'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+      'service_ppdfd5r', // Replace with your EmailJS service ID
+      'template_lcjbsqc', // Replace with your EmailJS template ID
       templateParams
     );
 
